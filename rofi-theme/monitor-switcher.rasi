@@ -1,16 +1,16 @@
 /*******************************************************
  * ROFI configs i3 monitor-switcher
  *******************************************************/
- 
+
 configuration {
-    font:                           "NotoSansMono Nerd Font Regular 10";
+    font:                           "NotoSansMono Nerd Font Regular 36";
     show-icons:                     false;
-    icon-theme: 					"Qogir";
+    icon-theme:                     "Qogir";
     scroll-method:                  0;
     disable-history:                false;
     fullscreen:                     false;
-	hide-scrollbar: 				true;
-	sidebar-mode: 					false;
+    hide-scrollbar:                 true;
+    sidebar-mode:                   false;
 }
 
 @import "~/.config/rofi/arc_dark_transparent_colors.rasi"
@@ -21,7 +21,7 @@ window {
     border:                         0;
     padding:                        10;
     transparency:                   "real";
-    width:                          150px;
+    width:                          500px;
     location:                       east;
 /*y-offset:                       18;*/
 /*x-offset:	                    850;*/
