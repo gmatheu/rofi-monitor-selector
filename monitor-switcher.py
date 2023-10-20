@@ -74,19 +74,19 @@ class BelowOf(Action):
 
 def get_action_key(a: Action):
     if isinstance(a, Disable):
-        return f"襤 Disable"
-    if isinstance(a, Alone):
-        return f" Alone"
-    if isinstance(a, Primary):
-        return f" Primary"
+        return f"☠ Disable"
     if isinstance(a, LeftOf):
-        return f" Left of {a.target.name}"
+        return f"🞀 Left of {a.target.name}"
     if isinstance(a, RightOf):
-        return f" Right of {a.target.name}"
+        return f"⯈ Right of {a.target.name}"
     if isinstance(a, AboveOf):
-        return f" Above of {a.target.name}"
+        return f"⏶ Above of {a.target.name}"
     if isinstance(a, BelowOf):
-        return f" Below of {a.target.name}"
+        return f"⏷ Below of {a.target.name}"
+    if isinstance(a, Alone):
+        return " Alone"
+    if isinstance(a, Primary):
+        return " Primary"
 
 def generate_xrandr_cmd(a: Action, active_output: list[Output]):
     if isinstance(a, Disable):
@@ -141,7 +141,7 @@ def get_outputs(window, d):
 
         outputs.append(Output(id, name, is_primary, is_connected, is_active, output_modes))
 
-    return list(reversed(sorted(outputs, key=lambda o: (o.isPrimary, o.name))))
+    return list(reversed(sorted(outputs, key=lambda o: (not o.isPrimary, o.name))))
 
 # icon from NotoSansMono Nerd Font (see rofi theme)
 def output_display(output): 
